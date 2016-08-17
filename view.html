@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta charset="UTF-8">
+   <meta http-equiv="pragma" content="no-cache">
+   <meta http-equiv="cache-control" content="no-cache">
+   <meta http-equiv="expires" content="0">   
+   <link href="./hifive-all-1.2.3/h5.css" rel="stylesheet">
+   <script src="./jquery-2.1.1/jquery.min.js"></script>
+   <script src="./hifive-all-1.2.3/ejs-h5mod.js"></script>
+   <script src="./hifive-all-1.2.3/h5.dev.js"></script>
+   <script src="step5.js"></script>
+   <title>hifive ビュー操作</title>
+ </head>
+ <body>
+    <div id="container">
+      <div>
+        1から入力した数値までを奇数は<span style="color: red;">赤色</span>で、
+        偶数は<span style="color: blue;">青色</span>で画面に出力します。
+      </div>
+      <input type="text" id="to" value=""/>
+      <input type="button" id="output" value="出力" />
+      <ul id="list"></ul>
+    </div>
+ </body>
+</html>
