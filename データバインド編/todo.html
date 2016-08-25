@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta charset="UTF-8">
+   <meta http-equiv="pragma" content="no-cache">
+   <meta http-equiv="cache-control" content="no-cache">
+   <meta http-equiv="expires" content="-1">
+   <link href="../hifive-all-1.2.3/h5.css" rel="stylesheet">
+   <link rel="stylesheet" type="text/css" href="todo-style.css">
+   <script src="../jquery-2.1.1/jquery.min.js"></script>
+   <script src="../hifive-all-1.2.3/ejs-h5mod.js"></script>
+   <script src="../hifive-all-1.2.3/h5.dev.js"></script>
+   
+   <script src="todoModel.js"></script>
+   <script src="todoLogic.js"></script>
+   <script src="todoController.js"></script>
+   <script src="init.js"></script>
+<title>TODO管理</title>
+</head>
+<body>
+  <div id="content" class="content">
+    <div class="header">
+      <form id="todoRegForm">
+        <div class="todo-form corner-all box">
+          <div class="todo-form-right">
+            <input type="button" id="btnRegist"
+              class="corner-all ui-button gray" value="登録" tabindex="2">
+          </div>
+          <div class="todo-form-left">
+            <input type="text" id="txtTodo"
+              class="corner-all ui-text txt-todo" placeholder="TODO"
+              tabindex="1">
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="top">
+      <!--{h5view id="tmplTodos"}
+      <table class="todo-list" id="list">
+        <thead>
+          <tr><th>&nbsp;</th><th>内容</th></tr>
+        </thead>
+        <tbody data-h5-loop-context="todos">
+          <tr>
+            <td class="status">
+              <input type="hidden" data-h5-bind="id" />
+              <input type="checkbox" class="ui-check" data-h5-bind="attr(checked):checked"/>
+            </td>
+            <td class="content">
+              <span data-h5-bind="content;style(text-decoration):contentStyle"></span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    -->
+    </div>
+    <div class="bottom">
+      <!--{h5view id="tmplDetail"}
+      <form id="detailForm" class="form-detail" data-h5-loop-context="detail">
+        <input type="button" id="btnBack" class="ui-button gray" value="×" tabindex="2">
+        <table class="tbl-detail">
+          <tr>
+            <th>登録日:</th>
+            <td>
+              <span data-h5-bind="ymdhms"></span>
+              <input type="hidden" name="id" data-h5-bind="id"/>
+            </td>
+          </tr>
+          <tr>
+            <th>TODO:</th>
+            <td><input type="text" name="content" class="ui-text" data-h5-bind="content" /></td>
+          </tr>
+          <tr>
+            <th>完了:</th>
+            <td><input type="checkbox" name="status" class="ui-check" data-h5-bind="attr(checked):checked"/></td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <div class="div-btn-space"><input type="button" id="btnUpdate" class="corner-all ui-button gray" value="更新" /></div>
+              <div class="div-btn-space"><input type="button" id="btnDel" class="corner-all ui-button gray" value="削除" /></div>
+            </td>
+          </tr>
+        </table>
+      </form>
+    -->
+    </div>
+  </div>
+</body>
+</html>

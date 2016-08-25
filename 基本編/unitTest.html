@@ -1,0 +1,25 @@
+<!doctype html>  
+<html>  
+   <head>  
+       <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-git.css" type="text/css" media="screen" />
+       <!--QUnitスタンドアロンで実行可能-->
+       <script type="text/javascript" src="https://code.jquery.com/qunit/qunit-2.0.1.js"></script>
+       <script>  
+                      // モジュールに所属しないテスト  
+           QUnit.test("a basic test example", function(){  
+              
+               var value = "hello";  
+               equal("hello", value, "We expect value to be hello");  
+           });  
+              
+          
+               
+        
+       </script>  
+   </head>  
+   <body>
+      <!-- テスト結果を表示する領域 -->  
+      <div id="qunit"></div>
+      <div id="qunit-fixture">test markup, will be hidden</div> 
+   </body>  
+</html>

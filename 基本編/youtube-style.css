@@ -26,9 +26,10 @@
     height: 20px;
 }
 .btn {
-    width: 80px;
+    width: 90px;
     height: 25px;
     background-color: #9AC0CD;
+    border-radius: 0.5em;
     font-weight: bolder;
     font-family: "微软雅黑";
     color : #FFFFFF;
@@ -37,7 +38,6 @@
     height: 500px;
     width: 1080px;
     margin: 10px auto;
-    background-color: #EAEAEA;
     position: relative;
 }
 .result-message {

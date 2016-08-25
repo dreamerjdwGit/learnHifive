@@ -2,6 +2,7 @@ $(function(){
 	var youtubeController = {
 		__name: 'youtubeController',
 		_keyword: '',
+		youtubeLogic: youtubeLogic,
 		'#search submit': function(context, $el) {
 			context.event.preventDefault();
 			var keywordInput= this.$find('#keyword');
@@ -11,6 +12,7 @@ $(function(){
 			}
 			alert(this._keyword);
 		}
+		_search: function(keyword, index, indicatorTarget, indi)
 	};
 	h5.core.controller('.container', youtubeController);
 });

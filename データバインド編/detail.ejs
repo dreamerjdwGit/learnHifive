@@ -1,0 +1,35 @@
+<!-- TODO inputタグには自動でvalue属性にバインドされるはずなので、直す -->
+
+<script type="text/ejs" id="detail">
+	<h2 data-h5-bind="date"></h2>
+	<hr/>
+	<div data-h5-loop-context="schedules">
+		<div class="schedule-detail">
+			<p class="subject" data-h5-bind="subject"></p>
+			<p class="from-to" data-h5-bind="fromTo"></p>
+			<p class="detail" data-h5-bind="detail"></p>
+			<input type="hidden" data-h5-bind="attr(value):id" />
+			<button class="edit-schedule">編集</button>
+		</div>
+	</div>
+	<button class="add-schedule">予定を追加</button>
+</script>
+
+<script type="text/ejs" id="edit-dialog">
+	<h2 data-h5-bind="date"></h2>
+	<div class="schedule-dialog" data-h5-context="schedule">
+		<input type="hidden" name="date" data-h5-bind="attr(value):date">
+		<label>件名</label><input type="text" data-h5-bind="attr(value):subject" name="subject"><br>
+		<label>開始</label><input type="text" class="time" data-h5-bind="attr(value):from" name="from"><br>
+		<label>終了</label><input type="text" class="time" data-h5-bind="attr(value):to" name="to"><br>
+		<label>詳細</label><textarea class="detail" data-h5-bind="detail"></textarea>
+		<hr style="display:none">
+		[% if(isEdit) { %]
+		<input type="hidden" name="id" data-h5-bind="attr(value):id"/>
+		<button class="rewrite-schedule">変更</button>
+		<button class="delete-schedule">削除</button>
+		[% } else { %]
+		<button class="add-schedule">追加</button>
+		[% } %]
+	</div>
+</script>

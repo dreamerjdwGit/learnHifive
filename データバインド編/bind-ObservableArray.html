@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta charset="UTF-8">
+   <meta http-equiv="pragma" content="no-cache">
+   <meta http-equiv="cache-control" content="no-cache">
+   <meta http-equiv="expires" content="0">
+   <link href="../hifive-all-1.2.3/h5.css" rel="stylesheet">
+   <script src="../jquery-2.1.1/jquery.min.js"></script>
+   <script src="../hifive-all-1.2.3/ejs-h5mod.js"></script>
+   <script src="../hifive-all-1.2.3/h5.dev.js"></script>
+   <script src="bind-ObservableArray.js"></script>
+   <title>bind</title>
+ </head>
+ <body>
+   <div id="bindtest">
+     <h1 data-h5-bind="title"></h1>
+     <div data-h5-loop-context="items">
+         ID: <span data-h5-bind="id"></span>
+         </br>
+         Name: <span data-h5-bind="name"></span>
+         </br>
+     </div>
+   </div>
+ </body>
+</html>

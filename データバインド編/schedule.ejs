@@ -1,0 +1,66 @@
+<script type="text/ejs" id="calender">
+	<div id="calender">
+		<input type="hidden" id="view_year" value="[%= year %]" />
+		<input type="hidden" id="view_month" value="[%= month %]" />
+		<h2 class="hearder">[%= year %]年 [%= month %]月 </h2>
+		<span class="preMonth link">前の月へ</span>
+		<span class="nextMonth link">次の月へ</span>
+
+		[%
+			// 一日のミリ秒数
+			var ms = 86400000;
+			// 指定月を日付オブジェクトに変換
+			var date = new Date(year, month - 1);
+			// 指定月の最初の日のある週の日曜を求める
+			var curDate = new Date(date.getTime() - date.getDay() * ms);
+			// 表示する最後の月の月末日を求める
+			var endDateTime = new Date((month > 11)?year+1:year, month % 12, 0).getTime();
+			if(new Date(endDateTime).getDay() === 6){
+				endDateTime = new Date(endDateTime + 7 * ms).getTime();
+			}
+		%]
+			<table class="calender">
+				<thead>
+					<tr>
+						[%for (var i = 0, week = ['日','月','火','水','木','金','土']; i < week.length; i++) {%]
+							<th class="[% if(i===0){ %]sun[% }else if(i===6){ %]sat[% } %]">[%= week[i] %]</th>
+						[% } %]
+					</tr>
+				</thead>
+				<tbody>
+					[% while(endDateTime >= curDate.getTime() || curDate.getDay()){ %]
+						[% if (!curDate.getDay()) { %]
+							<tr>
+						[% } %]
+						[% var m = curDate.getMonth();
+							var formatDate = h5.u.str.format('{0}-{1}-{2}', curDate.getFullYear(), curDate.getMonth() + 1, curDate.getDate());
+						 %]
+						<td [%:= (function(){
+							var evenOdd = m === month-1? 'target-month' : 'no-target-month';
+							return 'class="current-month-date date-column ' + evenOdd + '" id="' + formatDate + '"';
+							})()
+							%]>
+								<div class="td_cell">
+									<div class="scheduleCell"></div>
+									<span class="date">
+										[%= curDate.getDate() %]
+									</span>
+								</div>
+							</td>
+						[% curDate = new Date(curDate.getTime() + ms); %]
+						[% if (!curDate.getDay()) { %]
+							</tr>
+						[% } %]
+					[% } %]
+				</tbody>
+			</table>
+		</div>
+	</div>
+</script>
+
+<script type="text/ejs" id="detail">
+	<h2 data-h5-bind="date"></h2>
+	<ul data-h5-loop-context="schedules">
+		<li data-h5-bind="subject">
+	</ul>
+</script>
